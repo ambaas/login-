@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.15/tailwind.min.css" integrity="sha512-braXHF1tCeb8MzPktmUHhrjZBSZknHvjmkUdkAbeqtIrWwCchhcpUeAf2Sq3yIq1Q1x5PlroafjceOUbIE3Q5g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+    <div class='flex flex-col mt-10 px-5 py-5 shadow-2xl'>
+        <p id='mensagem'></p>
+        <h2 class='text-center font-bold text-xl'>Login</h2>
+        <input id='email' placeholder="Email" class='mt-2 border border-black py-2 px-5 rounded' type="text">
+        <input id='senha' placeholder="Senha" class='mt-2 border border-black py-2 px-5 rounded' type="password">
+
+        <button onclick="Login()" class='md:bg-red-500 mt-2 py-2 px-5 bg-blue-600 text-white font-bold rounded hover:bg-blue-800'>Entrar</button>
+        <button onclick="Limpar()" class='md:bg-red-500 mt-2 py-2 px-5 bg-blue-600 text-white font-bold rounded hover:bg-blue-800'>Limpar</button>
+    </div>
+    
+    <script>
+        function Limpar (){
+           document.querySelector('#email').value=''
+           document.querySelector('#senha').value=''
+           document.querySelector('#mensagem').innerHTML=''
+        }
+        function Login(){
+            var emailcerto='felipeambaas@gmail.com'
+            var senhacerta='120219jes'
+
+            if (emailcerto==document.querySelector('#email').value && senhacerta==document.querySelector('#senha').value){
+                document.querySelector('#mensagem').innerHTML='login feito com sucesso'
+                window.location.href='https://mail.google.com/mail/u/1/#inbox'
+            } else {
+                document.querySelector('#mensagem').innerHTML='login nao encontrado!'
+            }
+        }
+    </script>
+
+</body>
+</html>
